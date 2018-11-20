@@ -1,0 +1,13 @@
+{
+  "name": "indecision_app",
+  "version": "1.0.0",
+  "description": "learing app",
+  "main": "index.js",
+  "repository": "https://gklsan:gkl987456@github.com/gklsan/indecision_app.git",
+  "author": "Gokul P",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}
