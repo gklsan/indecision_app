@@ -1,83 +1,26 @@
 'use strict';
 
-console.log('App.js is runnging!!!!!!');
+console.log('**************** Inside es6-arrow-function file ****************');
 
-// This is the JSX code
-var app = {
-    title: 'Indecision APP',
-    subtitle: 'Learning the React',
-    options: ['one', 'two']
+var square = function square(x) {
+    return x * x;
+};
+console.log('square', square(4));
+
+var squareArrowBlock = function squareArrowBlock(x) {
+    return x * x;
+};
+console.log('squareArrowBlock', squareArrowBlock(5));
+
+var squareArrow = function squareArrow(x) {
+    return x * x;
+};
+console.log('squareArrow', squareArrow(5));
+
+// Challenge
+
+var getFirstName = function getFirstName(fullName) {
+    return fullName.split(' ')[0];
 };
 
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title.toUpperCase()
-    ),
-    app.subtitle && React.createElement(
-        'p',
-        null,
-        'Subtitle: ',
-        app.subtitle,
-        '!'
-    ),
-    React.createElement(
-        'p',
-        null,
-        app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'First'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Second'
-        )
-    )
-);
-
-var user = {
-    name: 'Gokul P',
-    age: 28,
-    location: 'Bangalore'
-};
-
-function getLocation(location) {
-    if (location) {
-        return React.createElement(
-            'p',
-            null,
-            'Location: ',
-            location
-        );
-    }
-}
-var templateTwo = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        user.name ? user.name : 'Anonymous'
-    ),
-    user.age && user.age > 25 && React.createElement(
-        'p',
-        null,
-        'Age: ',
-        user.age
-    ),
-    getLocation(user.location)
-);
-
-var appRoot = document.getElementById("app_root");
-
-ReactDOM.render(templateTwo, appRoot);
+console.log(getFirstName("Gokul P"));
