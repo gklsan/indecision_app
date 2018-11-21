@@ -1,25 +1,39 @@
 console.log('App.js is runnging!!!!!!');
 
 // This is the JSX code
+var app = {
+    title: 'Indecision APP',
+    subtitle: 'Learning the React'
+};
+
 var template =  (
     <div>
-        <h1>This is jsx type of code!!!!</h1>
-        <p> test </p>
-        <ul>
+        <h1>{app.title.toUpperCase()}</h1>
+        <p>{app.subtitle}</p>
+        <ol>
             <li>First</li>
             <li>Second</li>
-        </ul>
+        </ol>
     </div>
 );
 
+var user = {
+    name: 'Gokul P',
+    age: 28,
+    location: 'Bangalore'
+}
 
+
+var userName = 'Gokul P';
+var userAge = 28;
+var userLocation = 'Bangalore';
 var templateTwo =
     <div>
-        <h1>Gokul P</h1>
-        <p>Age: 28</p>
-        <p>Location: Bangalore</p>
+        <h1>{user.name}</h1>
+        <p>Age: {user.age}</p>
+        <p>Location: {user.location}</p>
     </div>
 
 var appRoot = document.getElementById("app_root");
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

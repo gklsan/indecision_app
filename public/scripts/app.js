@@ -1,57 +1,73 @@
-"use strict";
+'use strict';
 
 console.log('App.js is runnging!!!!!!');
 
 // This is the JSX code
+var app = {
+    title: 'Indecision APP',
+    subtitle: 'Learning the React'
+};
+
 var template = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "This is jsx type of code!!!!"
+        app.title.toUpperCase()
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        " test "
+        app.subtitle
     ),
     React.createElement(
-        "ul",
+        'ol',
         null,
         React.createElement(
-            "li",
+            'li',
             null,
-            "First"
+            'First'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Second"
+            'Second'
         )
     )
 );
 
+var user = {
+    name: 'Gokul P',
+    age: 28,
+    location: 'Bangalore'
+};
+
+var userName = 'Gokul P';
+var userAge = 28;
+var userLocation = 'Bangalore';
 var templateTwo = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "Gokul P"
+        user.name
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Age: 28"
+        'Age: ',
+        user.age
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Location: Bangalore"
+        'Location: ',
+        user.location
     )
 );
 
 var appRoot = document.getElementById("app_root");
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
