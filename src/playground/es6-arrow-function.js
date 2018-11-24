@@ -21,4 +21,4 @@ console.log('squareArrow', squareArrow(5));
 
 const getFirstName = (fullName) => fullName.split(' ')[0]
 
-console.log(getFirstName("Gokul P"))
+console.log(getFirstName("Gokul P"));
