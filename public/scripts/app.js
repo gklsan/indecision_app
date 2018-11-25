@@ -1,46 +1,94 @@
 'use strict';
 
-console.log('**************** Inside es6-arrow-function-2 file ****************');
+console.log('App.js is runnging!!!!!!');
 
-function add(a, b) {
-    console.log(arguments);
-    return a + b;
-}
-console.log('add', add(10, 44));
-
-var addArrow = function addArrow(a, b) {
-    return a + b;
-};
-console.log('addArrow', addArrow(4, 3));
-
-var user = {
-    name: 'gokul',
-    cities: ['erode', 'Bangalore', 'Chennai'],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
-
-        // console.log(this.name);
-        // console.log(this.cities);
-        return this.cities.map(function (city) {
-            return _this.name + " lived in " + city;
-        });
-        // this.cities.forEach((city) => {
-        //     console.log(that.name + ' Lived in ' + city)
-        // })
-    }
+// This is the JSX code
+var app = {
+    title: 'Indecision APP',
+    subtitle: 'Learning the React',
+    options: ['one', 'two']
 };
 
-console.log(user.printPlacesLived());
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title.toUpperCase()
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        'Subtitle: ',
+        app.subtitle,
+        '!'
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'First'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'Second'
+        )
+    )
+);
 
-var multiplier = {
-    numbers: [1, 2, 3, 4, 5, 6, 6],
-    multiplyBy: 20,
-    multiply: function multiply() {
-        var _this2 = this;
+var count = 0;
+var appRoot = document.getElementById("app_root");
 
-        return this.numbers.map(function (num) {
-            return num * _this2.multiplyBy;
-        });
-    }
+var addOne = function addOne() {
+    count++;
+    renderCounterApp();
 };
-console.log(multiplier.multiply());
+
+var minusOne = function minusOne() {
+    count--;
+    renderCounterApp();
+};
+
+var resetBtn = function resetBtn() {
+    count = 0;
+    renderCounterApp();
+};
+var renderCounterApp = function renderCounterApp() {
+    var templateTwo = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Count: ',
+            count
+        ),
+        React.createElement(
+            'button',
+            { id: 'increment_btn', className: 'button', onClick: addOne },
+            '+1'
+        ),
+        React.createElement(
+            'button',
+            { id: 'decrement_btn', className: 'button', onClick: minusOne },
+            '-1'
+        ),
+        React.createElement(
+            'button',
+            { id: 'reset_btn', className: 'button', onClick: resetBtn },
+            'Reset'
+        )
+    );
+
+    ReactDOM.render(templateTwo, appRoot);
+};
+renderCounterApp();
