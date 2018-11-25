@@ -1,36 +1,16 @@
 'use strict';
 
-console.log('App.js is runnging!!!!!!');
+console.log("Build in visible");
 
-// This is the JSX code
-var app = {
-    title: 'Indecision APP',
-    subtitle: 'Learning the React',
-    options: []
-};
+var appRoot = document.getElementById('app_root');
+var visiblity = false;
 
-var onFormSubmit = function onFormSubmit(e) {
-    e.preventDefault();
-    var option = e.target.elements.option.value;
-    if (option) {
-        app.options.push(option);
-        e.target.elements.option.value = '';
-    }
+var updateVisiblity = function updateVisiblity() {
+    // visiblity = visiblity ? false : true;
+    visiblity = !visiblity;
+    console.log(visiblity);
     render();
 };
-
-var onRemoveAll = function onRemoveAll() {
-    app.options = [];
-    render();
-};
-
-var onMakeDecision = function onMakeDecision() {
-    var randNum = Math.floor(Math.random() * app.options.length);
-    var option = app.options[randNum];
-    alert(option);
-};
-
-var appRoot = document.getElementById("app_root");
 
 var render = function render() {
     var template = React.createElement(
@@ -39,53 +19,24 @@ var render = function render() {
         React.createElement(
             'h1',
             null,
-            app.title.toUpperCase()
-        ),
-        app.subtitle && React.createElement(
-            'p',
-            null,
-            'Subtitle: ',
-            app.subtitle,
-            '!'
-        ),
-        React.createElement(
-            'p',
-            null,
-            app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
+            ' Visiblity Toggle'
         ),
         React.createElement(
             'button',
-            { disabled: app.options.length > 0 ? false : true, onClick: onMakeDecision },
-            'What should I do?'
+            { onClick: updateVisiblity },
+            visiblity ? 'Hide details' : 'Show details'
         ),
-        React.createElement(
-            'button',
-            { onClick: onRemoveAll },
-            'Remove All Options'
-        ),
-        React.createElement(
-            'ol',
+        visiblity && React.createElement(
+            'div',
             null,
-            app.options.map(function (opt) {
-                return React.createElement(
-                    'li',
-                    { key: opt },
-                    opt
-                );
-            })
-        ),
-        React.createElement(
-            'form',
-            { onSubmit: onFormSubmit },
-            React.createElement('input', { type: 'text', name: 'option' }),
             React.createElement(
-                'button',
+                'p',
                 null,
-                'Add Option'
-            )
+                ' This is the visiblity details'
+            ),
+            ' '
         )
     );
-
     ReactDOM.render(template, appRoot);
 };
 
