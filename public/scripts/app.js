@@ -24,9 +24,11 @@ var onRemoveAll = function onRemoveAll() {
     render();
 };
 
-// const orderList = () => {
-//     return app.options.map((opt) => { return <li key={opt}>{opt}</li>})
-// }
+var onMakeDecision = function onMakeDecision() {
+    var randNum = Math.floor(Math.random() * app.options.length);
+    var option = app.options[randNum];
+    alert(option);
+};
 
 var appRoot = document.getElementById("app_root");
 
@@ -52,11 +54,9 @@ var render = function render() {
             app.options && app.options.length > 0 ? 'Here are your options' : 'No options'
         ),
         React.createElement(
-            'p',
-            null,
-            'Count: ',
-            app.options.length,
-            ' '
+            'button',
+            { disabled: app.options.length > 0 ? false : true, onClick: onMakeDecision },
+            'What should I do?'
         ),
         React.createElement(
             'button',

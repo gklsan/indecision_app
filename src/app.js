@@ -23,9 +23,11 @@ const onRemoveAll = () => {
 
 }
 
-// const orderList = () => {
-//     return app.options.map((opt) => { return <li key={opt}>{opt}</li>})
-// }
+const onMakeDecision = () => {
+    const randNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randNum];
+    alert(option);
+};
 
 const appRoot = document.getElementById("app_root");
 
@@ -35,7 +37,7 @@ const render = () => {
             <h1>{app.title.toUpperCase()}</h1>
             {app.subtitle && <p>Subtitle: {app.subtitle}!</p>}
             <p>{app.options && app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-            <p>Count: {app.options.length} </p>
+            <button disabled={app.options.length > 0 ? false : true} onClick={onMakeDecision}>What should I do?</button>
             <button onClick={onRemoveAll}>Remove All Options</button>
             <ol>
                 {app.options.map((opt) => <li key={opt}>{opt}</li>)}
