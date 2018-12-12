@@ -34,3 +34,5 @@
     
     
 
+##### Remove Global libraries
+    * yarn global remove babel-cli live-server
