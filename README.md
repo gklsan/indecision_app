@@ -36,3 +36,6 @@
 
 ##### Remove Global libraries
     * yarn global remove babel-cli live-server
+    
+##### Install webpacker
+    *  yarn add webpack@3.1.0    
