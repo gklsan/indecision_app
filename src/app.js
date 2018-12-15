@@ -1,11 +1,24 @@
-import { square } from "./utils";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import isSenor, { isAdult, canDrink } from "./person";
+const template = React.createElement('p', {}, 'test');
+ReactDOM.render(template, document.getElementById('app'));
 
 
-console.log("app.js is running..!");
+// import { square } from "./utils";
+//
+// import isSenor, { isAdult, canDrink } from "./person";
+//
+//
+// console.log("app.js is running..!");
+//
+// console.log(square(7));
+// console.log(isAdult(30));
+// console.log(canDrink(18));
+// console.log(isSenor(90));
 
-console.log(square(7));
-console.log(isAdult(30));
-console.log(canDrink(18));
-console.log(isSenor(90));
+// import validator from 'validator';
+//
+// const res = validator.isEmail('rere@gds.din');
+//
+// console.log(res);

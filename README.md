@@ -38,4 +38,12 @@
     * yarn global remove babel-cli live-server
     
 ##### Install webpacker
-    *  yarn add webpack@3.1.0    
+    *  yarn add webpack@3.1.0
+    
+##### Install #3rd party library
+    * yarn add validator@8.0.0
+    
+#### Install react and react-dom
+    * yarn add react@16.6.3 react-dom@16.6.3
+    
+####        
