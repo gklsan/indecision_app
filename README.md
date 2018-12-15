@@ -46,4 +46,7 @@
 #### Install react and react-dom
     * yarn add react@16.6.3 react-dom@16.6.3
     
-####        
+#### New package to run babel automatically
+    yarn add babel-core@6.25.0 babel-loader@7.1.1
+    
+           

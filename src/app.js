@@ -1,7 +1,9 @@
+console.log("app.js is running..!");
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template = React.createElement('p', {}, 'test');
+const template = <p>Hui This is jsx syntax!!!</p>;
+
 ReactDOM.render(template, document.getElementById('app'));
 
 
@@ -10,7 +12,6 @@ ReactDOM.render(template, document.getElementById('app'));
 // import isSenor, { isAdult, canDrink } from "./person";
 //
 //
-// console.log("app.js is running..!");
 //
 // console.log(square(7));
 // console.log(isAdult(30));
