@@ -38,7 +38,8 @@
     * yarn global remove babel-cli live-server
     
 ##### Install webpacker
-    *  yarn add webpack@3.1.0
+    * yarn add webpack@4.27.1
+    * yarn add webpack-cli@3.1.2
     
 ##### Install #3rd party library
     * yarn add validator@8.0.0
@@ -49,4 +50,10 @@
 #### New package to run babel automatically
     yarn add babel-core@6.25.0 babel-loader@7.1.1
     
-           
+#### Install webpack dev server
+    yarn add webpack-dev-server@3.1.10 
+    
+#### Add transform class properties
+    yarn add babel-plugin-transform-class-properties@6.24.1              
+    
+    

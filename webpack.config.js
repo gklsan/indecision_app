@@ -1,11 +1,11 @@
 const path = require('path');
 const entryPath = './src/app.js';
-const outputPath = path.join(__dirname, 'public');
+const publicDirPath = path.join(__dirname, 'public');
 
 module.exports = {
     entry: entryPath,
     output: {
-        path: outputPath,
+        path: publicDirPath,
         filename: "bundle.js"
     },
     module: {
@@ -15,5 +15,9 @@ module.exports = {
             exclude: /node_modules/
         }]
     },
-    devtool: "cheap-module-eval-source-map" //help us to idenitify the errors.
+    devtool: "cheap-module-eval-source-map", //help us to idenitify the errors.
+    devServer: {
+        contentBase: publicDirPath,
+        port: 3000
+    }
 }
