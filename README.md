@@ -56,4 +56,7 @@
 #### Add transform class properties
     yarn add babel-plugin-transform-class-properties@6.24.1              
     
+#### Adding react-modal
+    yarn add react-modal@3.7.1
     
+         
