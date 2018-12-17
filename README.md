@@ -59,4 +59,7 @@
 #### Adding react-modal
     yarn add react-modal@3.7.1
     
-         
+#### Adding style loader and css loader
+    yarn add style-loader@0.23.1 css-loader@2.0.1
+    
+####              
