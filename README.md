@@ -61,5 +61,9 @@
     
 #### Adding style loader and css loader
     yarn add style-loader@0.23.1 css-loader@2.0.1
+    yarn add sass-loader@7.1.0 node-sass@4.11.0
     
-####              
+#### add normalize.css
+    yarn add normalize.css@8.0.1
+    
+                 

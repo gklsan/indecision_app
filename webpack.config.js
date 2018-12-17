@@ -9,11 +9,20 @@ module.exports = {
         filename: "bundle.js"
     },
     module: {
-        rules: [{
-            loader: 'babel-loader',
-            test: /\.js/,
-            exclude: /node_modules/
-        }]
+        rules: [
+            {
+                loader: 'babel-loader',
+                test: /\.js/,
+                exclude: /node_modules/
+            }, {
+                test: /\.s?css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
     },
     devtool: "cheap-module-eval-source-map", //help us to idenitify the errors.
     devServer: {
